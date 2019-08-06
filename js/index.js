@@ -6,6 +6,7 @@ const images = document.querySelectorAll('img');
 const body = document.querySelector('body');
 const text = document.querySelectorAll('p, h2, h4');
 const paragraph = document.querySelectorAll('p');
+const headings = document.querySelectorAll('h1, h2, h4');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
@@ -33,14 +34,15 @@ images.forEach(img => img.addEventListener('mouseleave', e => {
     e.target.style.opacity = 1;
 }));
 
-// Navigation change color on double click
+// Navigation background changes color on double click
 mainNav.addEventListener('dblclick', e => {
     e.target.style.background = '#FFEBCD';
 });
 
-window.addEventListener('scroll', e => {
+// Navigation background changes color when page is scrolled
+window.addEventListener('scroll', () => {
     mainNav.style.background = 'blueviolet';
-})
+});
 
 // Body change background color on keydown, back on keyup
 body.addEventListener('keydown', e => {
@@ -59,3 +61,8 @@ text.forEach(element => element.addEventListener('click', e => {
 paragraph.forEach(element => element.addEventListener('mouseup', e => {
     e.target.style.fontSize = '3.6rem';
 }))
+
+// Headings change color when window is resized
+window.addEventListener('resize', () => {
+    headings.forEach(heading => heading.style.color = 'yellowgreen');
+});
