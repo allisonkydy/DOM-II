@@ -58,7 +58,7 @@ body.addEventListener('keyup', e => {
 
 // Text changes on click
 text.forEach(element => element.addEventListener('click', e => {
-    e.target.style.color = 'red';
+    e.target.style.color = 'maroon';
     e.target.style.background = 'peachpuff';
     e.stopPropagation();
 }));
@@ -70,7 +70,7 @@ textContent.forEach(element => element.addEventListener('click', e => {
 
 // Paragraph size increases on mouseup
 paragraph.forEach(element => element.addEventListener('mouseup', e => {
-    e.target.style.fontSize = '3.6rem';
+    e.target.style.fontSize = '2.6rem';
 }))
 
 // Headings change color when window is resized
@@ -91,6 +91,7 @@ window.addEventListener('load', () => {
     });
 });
 
+// Animate sign up buttons
 button.forEach(btn => {
     btn.addEventListener('mouseover', e => {
         TweenMax.to(e.target, 1, {
