@@ -7,6 +7,7 @@ const body = document.querySelector('body');
 const text = document.querySelectorAll('p, h2, h4');
 const paragraph = document.querySelectorAll('p');
 const headings = document.querySelectorAll('h1, h2, h4');
+const textContent = document.querySelectorAll('.text-content');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
@@ -52,10 +53,17 @@ body.addEventListener('keyup', e => {
     e.target.style.background = 'white';
 });
 
-// Text color changes to red on click
+// Text changes on click
 text.forEach(element => element.addEventListener('click', e => {
     e.target.style.color = 'red';
+    e.target.style.background = 'peachpuff';
+    e.stopPropagation();
 }));
+
+// Text container changes on click
+textContent.forEach(element => element.addEventListener('click', e => {
+    e.target.style.border = '2px solid aquamarine';
+}))
 
 // Paragraph size increases on mouseup
 paragraph.forEach(element => element.addEventListener('mouseup', e => {
