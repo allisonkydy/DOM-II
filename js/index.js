@@ -9,6 +9,8 @@ const paragraph = document.querySelectorAll('p');
 const headings = document.querySelectorAll('h1, h2, h4');
 const textContent = document.querySelectorAll('.text-content');
 const navLinks = document.querySelectorAll('nav a');
+const headerImg = document.querySelector('.intro img');
+const button = document.querySelectorAll('.btn');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
@@ -80,3 +82,26 @@ window.addEventListener('resize', () => {
 navLinks.forEach(link => link.addEventListener('click', e => {
     e.preventDefault();
 }));
+
+// Animate header image on page load
+window.addEventListener('load', () => {
+    TweenMax.from(headerImg, 2, {
+        x: -300,
+        ease: Bounce.easeOut
+    });
+});
+
+button.forEach(btn => {
+    btn.addEventListener('mouseover', e => {
+        TweenMax.to(e.target, 1, {
+            scale: 1.4,
+            ease: Elastic.easeOut
+        })
+    });
+
+    btn.addEventListener('mouseleave', e => {
+        TweenMax.to(e.target, 0.6, {
+            scale: 1
+        })
+    })
+})
