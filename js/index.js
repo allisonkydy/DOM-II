@@ -3,6 +3,8 @@
 // ------------Selectors------------
 const mainNav = document.querySelector('.main-navigation');
 const images = document.querySelectorAll('img');
+const body = document.querySelector('body');
+const text = document.querySelectorAll('p, h2, h4');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
@@ -22,5 +24,17 @@ images.forEach(img => img.addEventListener('mouseleave', e => {
 // Navigation change color on double click
 mainNav.addEventListener('dblclick', e => {
     e.target.style.background = '#FFEBCD';
-    console.log('im scrolling');
 });
+
+// Body change background color on keydown, back on keyup
+body.addEventListener('keydown', e => {
+    e.target.style.background = 'darkslategray';
+});
+body.addEventListener('keyup', e => {
+    e.target.style.background = 'white';
+});
+
+// Text color changes to red on click
+text.forEach(element => element.addEventListener('click', e => {
+    e.target.style.color = 'red';
+}));
