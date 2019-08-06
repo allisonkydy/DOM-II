@@ -9,15 +9,26 @@ const paragraph = document.querySelectorAll('p');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
+images.forEach(img => img.style.width = '100%');
+images.forEach(img => img.style.height = '100%');
+images.forEach(img => img.style.transition = 'width 2s, height 2s');
 
 // ------------Event Listeners------------
 
-// Fade in images on mouseover
+// Images shrink on click, grow when transition ends
+images.forEach(img => img.addEventListener('click', e => {
+    e.target.style.width = '50%';
+    e.target.style.height = '50%';
+}));
+images.forEach(img => img.addEventListener('transitionend', e => {
+    e.target.style.width = '100%';
+    e.target.style.height = '100%';
+}));
+
+// Images fade in on mouseover, fade out on mouseleave
 images.forEach(img => img.addEventListener('mouseover', e => {
     e.target.style.opacity = 0.5;
 }));
-
-// Fade out images on mouseleave
 images.forEach(img => img.addEventListener('mouseleave', e => {
     e.target.style.opacity = 1;
 }));
