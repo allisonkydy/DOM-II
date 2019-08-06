@@ -38,6 +38,10 @@ mainNav.addEventListener('dblclick', e => {
     e.target.style.background = '#FFEBCD';
 });
 
+window.addEventListener('scroll', e => {
+    mainNav.style.background = 'blueviolet';
+})
+
 // Body change background color on keydown, back on keyup
 body.addEventListener('keydown', e => {
     e.target.style.background = 'darkslategray';
