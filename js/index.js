@@ -8,6 +8,7 @@ const text = document.querySelectorAll('p, h2, h4');
 const paragraph = document.querySelectorAll('p');
 const headings = document.querySelectorAll('h1, h2, h4');
 const textContent = document.querySelectorAll('.text-content');
+const navLinks = document.querySelectorAll('nav a');
 
 // ------------CSS Changes------------
 mainNav.style.zIndex = 1;
@@ -74,3 +75,8 @@ paragraph.forEach(element => element.addEventListener('mouseup', e => {
 window.addEventListener('resize', () => {
     headings.forEach(heading => heading.style.color = 'yellowgreen');
 });
+
+// Prevent navigation links from refreshing the page
+navLinks.forEach(link => link.addEventListener('click', e => {
+    e.preventDefault();
+}));
